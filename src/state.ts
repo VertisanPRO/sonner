@@ -143,7 +143,12 @@ class Observer {
           const message = typeof data.success === 'function' ? await data.success(response) : data.success;
           const description =
             typeof data.description === 'function' ? await data.description(response) : data.description;
-          this.create({ id, type: 'success', message, description });
+          if (message === null) {
+            this.dismiss(id);
+            id = undefined;
+          } else {
+            this.create({ id, type: 'success', message, description });
+          }
         }
       })
       .catch(async (error) => {
