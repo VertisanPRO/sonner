@@ -1,6 +1,6 @@
 {
   "name": "@vertisanpro/sonner",
-  "version": "1.5.0-v1",
+  "version": "1.5.0-v2",
   "description": "An opinionated toast component for React.",
   "exports": {
     "types": "./dist/index.d.ts",
